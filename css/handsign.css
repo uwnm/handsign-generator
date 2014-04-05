@@ -1,0 +1,92 @@
+body {
+  line-height: 150%;
+}
+h1, h2 {
+  margin-top: 30pt;
+  margin-bottom: 15pt;
+}
+.footer {
+  margin-top: 30pt;
+  padding: 20px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+#table {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+#table input {
+  text-align:center;
+}
+#table ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-width 0;
+}
+#table #head {
+  margin: 10px;
+  padding: 0px;
+  height: 35px;
+}
+#table .head-text {
+  height: 30px;
+/*
+  background-color: #fff0f0;
+*/
+}
+#table #cells {
+  margin: 0;
+  padding: 0;
+}
+#table .cell {
+  margin: 10px;
+  padding: 0px;
+  float: left;
+  width: 180px;
+  height: 200px;
+}
+#table .image {
+  margin: 0px;
+  padding: 0px;
+  width: 180px;
+  height: 165px;
+/*
+  background-color: #f0f0ff;
+*/
+}
+#table .text {
+  margin: 0px;
+  padding: 0px;
+  width: 180px;
+  height: 35px;
+/*
+  background-color: #fff0f0;
+*/
+}
+#imageBox img {
+  display: none;
+  border-style: solid;
+  border-color: #f9f9f9;
+  border-width: 2px;
+}
+.image-modal-button {
+  width: 120px;
+  height: 120px;
+  float: left;
+}
+#resizeModal .modal-body {
+  width: 520px;
+}
+.resize-modal-button {
+  padding-top: 30px;
+  width: 80px;
+  height: 80px;
+  float: left;
+  text-align: center;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>ハンドサインジェネレーター</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ハンドサインジェネレーター">
+    <meta name="author" content="うをのめ">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link href="css/bootstrap-editable.css" rel="stylesheet">
+    <link href="css/handsign.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>ハンドサインジェネレーター</h1>
+
+      <ul class="clearfix" id="table">
+        <li><ul id="head"></ul></li>
+        <li><ul id="cells"></ul></li>
+      </ul>
+
+      <p>
+      <button type="button" id="fire" class="btn btn-lg btn-default">画像を生成する</button>
+      <button type="button" id="resize" class="btn btn-lg btn-default" data-toggle="modal" data-target="#resizeModal">行数と列数の変更</button>
+      </p>
+
+      <div id="imageBox">
+        <img />
+        <canvas class="hidden"></canvas>
+      </div>
+
+      <h2>これはなに？</h2>
+
+      <p>最近<b>ハンドサイン画像を生成するサイトを作るのが流行っている</b>ようなので作っちゃいました。</p>
+
+      <h2>どうやってつかうの？</h2>
+
+      <ul>
+        <li>
+        適当な<b>テキストを入力</b>したのち、<b>画像を生成するボタン</b>を押して下さい。
+        最新鋭のえいち・てー・えむ・えるがハンドサイン画像をあなたの指示通りに描き出します。
+        あとは右クリックから<b>名前を付けて画像を保存</b>とか選んでみたらいいんじゃないかな。
+        </li>
+        <li>
+        地味に画像をクリックで変更、ドラッグアンドドロップで順番を入れ替えたりできます。
+        無駄に行数と列数も変更できたりもします。
+        </li>
+      </ul>
+
+      <h2>よくある質問</h2>
+
+      <ul>
+        <li><dl>
+          <dt>Q. あんな機能やこんな機能を付けて欲しい。</dt>
+          <dd>A. 作者はそろそろ飽きてきましたので、ソースは公開されてることだし自分で付けて下さいね。</dd>
+        </dl></li>
+        <li><dl>
+          <dt>Q. ああっすで懲りとらんかったか。</dt>
+          <dd>A. 遺憾ながら<a href="http://uwnm.github.io/eearth/">記憶にございません</a>。</dd>
+        </dl></li>
+      </ul>
+
+      <p>
+      Firefox 24.0 @ Windows 7 で動作確認しています。
+      </p>
+
+      <p>Similar Web services:</p>
+      <ul>
+        <li><a href="http://bzmm.jp/hs_gene/">ハンドサイン画像ジェネレーター</a> 様</li>
+        <li><a href="http://handsign-gen.appspot.com/">ハンドサイン一覧ジェネレーター</a> 様</li>
+      </ul>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="imageModalLabel">画像の変更</h4>
+          </div>
+          <div class="modal-body clearfix">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="resizeModal" tabindex="-1" role="dialog" aria-labelledby="resizeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="resizeModalLabel">行数と列数の変更</h4>
+          </div>
+          <div class="modal-body clearfix">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Original: <a href="http://www.lefande.com/hands.html">Standardized Hand Signals For Close Range Engagement (C.R.E.) Operations</a></p>
+      <p>This generator is created by <a href="http://twitter.com/uwnm">@uwnm</a></p>
+      <p>Used libraries: <a href="http://getbootstrap.com/">Bootstrap</a>,
+                         <a href="http://jquery.com/">jQuery</a>,
+                         <a href="http://dl.dropboxusercontent.com/u/6983010/wserv/imgLiquid/examples/imgLiquid.html">imgLiquid</a>
+      </p>
+    </div>
+
+    <a href="http://github.com/uwnm/handsign-generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom scripts for this page -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/imgLiquid-min.js"></script>
+    <script src="js/handsign.js"></script>
+  </body>
+</html>
